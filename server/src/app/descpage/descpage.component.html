@@ -1,0 +1,96 @@
+<!-- <div class="container">
+
+    <!-- Heading Row -->
+    <!-- <div class="row my-4">
+      <div class="col-lg-8">
+        <img class="img-fluid rounded" src="http://placehold.it/900x400" alt="">
+      </div>
+      <!-- /.col-lg-8 -->
+      <!-- <div class="col-lg-4">
+        <h1>Business Name or Tagline</h1>
+        <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
+        <a class="btn btn-primary btn-lg" href="#">Call to Action!</a>
+      </div>
+      <!-- /.col-md-4 -->
+<!-- </div>  --> 
+
+<!-- <div>
+  <div *ngFor="let bills of peopleBill">
+    {{bills.firstName}}
+    <button class="btn btn-success" > Hello</button>
+  </div>
+</div> -->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-7">
+
+  
+  
+  
+
+    
+      <div class="card mb-2" *ngFor="let astro of peopleAstro">
+      <div class="card-header"><h3>{{astro.astroName}}</h3></div>
+      <div class="card-body"><div>Last Name{{astro.astroDesc}}</div>
+      <div class="card-body"><div>Last Name{{astro.astroStone}}</div>
+      <div>Provider:{{astro.provider}}</div>
+     
+      <button class ="btn btn-danger ml-2" style="float:right" (click)="deleteAstro(astro._id)">Delete</button>
+      <button class ="btn btn-dark" style="float:right" (click)="showEditForm(astro)">Edit</button>
+      </div>
+      </div> 
+    </div>
+      
+    
+    <div class="col-md-5">
+        <form #frm="ngForm" (ngSubmit)="addAstro(frm)" *ngIf="!toggleForm">
+          
+          <legend>Add</legend>
+            <div class="form-group">
+              <label for="text">Star Name:</label>
+              <input type="text" class="form-control" name="astroName" ngModel>
+            </div>
+            <div class="form-group">
+              <label for="text">Star Description:</label>
+              <input type="text" class="form-control" name="astroDesc" ngModel>
+            </div>
+            <div class="form-group">
+              <label for="text">Birthstone</label>
+              <input type="text" class="form-control" name="astroStone" ngModel>
+            </div>
+           
+            <button type="submit" class="btn btn-grey">Submit</button>
+            
+          </form>
+        </div>
+        </div>
+      </div>
+
+
+
+
+      <!-- Edit -->
+
+      <div class="col-md-5">
+          <form #editfrm="ngForm" (ngSubmit)="editAstro(editfrm)" *ngIf="toggleForm">
+            
+            <legend>Edit Item</legend>
+              <div class="form-group">
+                <label for="text">Star Name:</label>
+                <input type="text" class="form-control" name="astroName" [ngModel]="selectedAstro.astroName">
+              </div>
+              <div class="form-group">
+                <label for="text">Star Description:</label>
+                <input type="text" class="form-control" name="astroDesc" [ngModel]="selectedAstro.astroDesc">
+              </div>
+              <div class="form-group">
+                <label for="text">Birthstone</label>
+                <input type="text" class="form-control" name="astroStone" [ngModel]="selectedAstro.astroStone">
+              </div>
+             
+              <button type="submit" class="btn btn-grey">Save</button>
+              
+            </form>
+          </div>
+    

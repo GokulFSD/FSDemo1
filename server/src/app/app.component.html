@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="card-body text-center">
+<h1>Welcome to {{title}} </h1>
+
+<app-desc></app-desc>
+<ul>
+    <li><a [routerLink]="descpage">ADD Sign Details</a></li>
+  
+    <li *ngFor="let astro of peopleAstro">
+      <a [routerLink]="link.path">{{ link.text }}</a>
+    </li>
+  </ul>
+  
+  <router-outlet></router-outlet>
+</div>
+</div>
